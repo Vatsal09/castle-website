@@ -1,0 +1,107 @@
+// Import the initial variables
+@import "~bulma/sass/utilities/initial-variables"
+@import "~bulma/sass/utilities/functions"
+
+// Config
+$castle-green: #2abb9b
+$castle-green-invert: #ffffff
+$castle-white: #ffffff
+$castle-white-invert: #333333
+
+$primary: $castle-green
+$primary-invert: $castle-green-invert
+
+// $footer-background-color: $grey-dark
+
+@import "~bulma/sass/utilities/derived-variables.sass"
+
+
+/**
+    things to restyle
+    .navbar-item.is-active
+    ~colors
+    ~breakpoint for header
+    **/
+
+.hero-background
+  position: absolute
+  box-sizing: border-box
+  width: auto
+  height: 100%
+  overflow: hidden
+
+.hero-background > img
+  min-width: 940px // determined by image
+
+.hero-shadow-green
+  display: block
+  position: absolute
+  box-sizing: border-box
+  height: 10%
+  width: 100%
+  background-color: rgba(42, 187, 155, 0.94)
+
+.hero-shadow-black
+  display: block
+  position: absolute
+  top: 10%
+  box-sizing: border-box
+  height: 90%
+  width: 100%
+  background-color: rgba(0, 0, 0, 0.5)
+
+
+
+.container.is-header
+  text-align: center
+  .title
+    display: inline-block
+    border: 4px solid white
+    padding: .25em
+    text-transform: uppercase
+
+.container-button
+  font-size: 1.3rem
+  text-align: center
+
+// Helper Classes
+.full-width-image-container
+  width: 100vw
+  height: 400px
+  position: relative
+  left: 50%
+  right: 50%
+  margin: 5em -50vw
+  background-size: cover
+  background-position: bottom
+  display: flex
+  justify-content: center
+  align-items: center
+
+.margin-top-0
+  margin-top: 0 !important
+
+@import "~bulma"
+
+ul.is-unstyled
+  margin: 0
+  padding: 0
+  list-style: none
+
+.logo-link-text
+  font-size: 1.6rem
+  font-weight: bolder
+  letter-spacing: 0.07rem
+
+.navbar-item
+  background-color: transparent !important
+  margin-left: 1rem
+  padding: 0
+  font-size: 1rem
+  
+
+  &:hover
+    color: rgba( 255, 255, 255, 0.5) !important
+
+  &.is-active
+    border-bottom: 2px solid white

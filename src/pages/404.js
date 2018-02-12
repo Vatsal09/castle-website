@@ -1,10 +1,15 @@
-import React from 'react'
+import React from 'react';
+import Link from "gatsby-link";
 
-const NotFoundPage = () => (
-  <div>
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </div>
-)
+const NotFoundPage = ({ updateHeading}) => {
+  updateHeading("404", "NOT FOUND")
+  return (
+    <div className="container">
+      <div className="content is-medium has-text-centered">
+        <p>Well, this page doesn't exist. <Link to="/">Head back?</Link></p>
+      </div>
+    </div>
+  );
+}
 
-export default NotFoundPage
+export default NotFoundPage;

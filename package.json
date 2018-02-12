@@ -1,15 +1,20 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "gatsby-starter-netlify-cms",
+  "description": "Example Gatsby, and Netlify CMS project",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Austin Green",
   "dependencies": {
-    "bulma": "^0.6.2",
-    "gatsby": "^1.9.158",
-    "gatsby-cli": "^1.1.34",
-    "gatsby-link": "^1.6.34",
-    "gatsby-plugin-react-helmet": "^2.0.3",
-    "react-helmet": "^5.2.0"
+    "bulma": "^0.6.1",
+    "gatsby": "^1.9.63",
+    "gatsby-link": "^1.6.21",
+    "gatsby-plugin-react-helmet": "^1.0.5",
+    "gatsby-plugin-sass": "^1.0.12",
+    "gatsby-plugin-sharp": "^1.6.18",
+    "gatsby-remark-images": "^1.5.18",
+    "gatsby-source-filesystem": "^1.5.5",
+    "gatsby-transformer-remark": "^1.7.17",
+    "gatsby-transformer-sharp": "^1.6.13",
+    "react-load-script": "0.0.6"
   },
   "keywords": [
     "gatsby"
@@ -17,12 +22,22 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "build": "gatsby build",
+    "build": "npm run build:cms && npm run build:site",
+    "build:site": "gatsby build",
+    "build:cms": "cd cms && yarn && npm run build",
     "develop": "gatsby develop",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
+    "serve": "gatsby serve",
+    "_format": "prettier --trailing-comma es5 --no-semi --single-quote --write",
+    "format": "npm run format:src & npm run format:cms",
+    "format:src": "npm run _format 'src/**/*.js'",
+    "format:cms": "npm run _format 'cms/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "prettier": "^1.10.2"
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-plugin-transform-react-pug": "^3.2.0",
+    "eslint": "^4.14.0",
+    "eslint-plugin-react": "^7.5.1",
+    "prettier": "^1.7.4"
   }
 }
